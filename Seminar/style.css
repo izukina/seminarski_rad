@@ -1,0 +1,187 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0 auto;
+    text-align: center;
+
+}
+
+ul{
+    list-style: none;
+    min-width: 100px;
+
+    
+}
+
+li{
+    min-width: 150px;
+    text-align: center;
+    align-items: center;
+
+}
+
+
+header{
+    
+    background: rgb(84, 84, 236);
+    color: white;
+    border-radius: 5px;
+}
+
+nav{
+    min-width: 500px;
+    align-items: center;
+
+}
+
+nav ul li a:link , a:visited
+{
+    display: block;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    margin-left: 10px;
+   
+}
+
+nav ul li a:hover , a:active{
+
+    background-color: burlywood;
+    border-radius: 20px;
+
+    transition-duration: 0.4s;
+    transition-timing-function: linear;
+
+
+}
+
+
+nav li{
+    cursor: pointer;
+    width: 50%;
+    
+}
+
+#welt{
+    background-color: darkblue ;
+    width: 101%;
+
+    
+}
+
+#naslov{
+    padding-top: 40px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+#artikl{
+    padding-top: 50px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 15px;
+
+}
+main{
+    padding: 50px;
+}
+h1{
+    font-size: 30px;
+    font-weight: 500px;
+    color: white;
+}
+
+.row{
+    align-items: center;
+}
+.article{
+   min-height: 500px;
+}
+
+.slika{
+    width: 100%;
+    height: 40%;
+    border-radius: 5px;
+}
+
+
+
+.slika:hover{
+    opacity: 0.95;
+}
+
+.text a{
+    text-decoration: none;
+    color: black;
+}
+
+.text a:hover{
+    color: darkblue;
+}
+#podnozje{
+    background-color: darkblue;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+}
+
+hr{
+    padding-bottom: 10px;
+}
+
+
+
+.slicica{
+    padding: 30px;
+    width: 100%;
+}
+
+.paragraf p
+{
+    padding: 30px;
+    font-size: 22px;
+}
+
+#ukratko_clanak 
+{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#ukratko_clanak p
+{
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#popravak
+{
+    width: 100%;
+}
+
+ .forma{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    border: 1px solid blue;
+    margin-top: 30px;
+    margin-bottom: 30px;
+} 
+
+
+
+
+

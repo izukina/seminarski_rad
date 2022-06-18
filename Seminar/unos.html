@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>Forma</title>
+
+        
+        <link rel ="stylesheet" type="text/css" href="style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+
+    </head>
+
+    <body>
+        
+        
+    
+        <div class="container">
+            <div class="row">
+                    <header class="col-lg-12 col-12">
+                        <div class="col-12" id="welt">
+                            <h1>WELT</h1>
+                        </div>
+                        <div id="navigacija">
+                            <nav class="col-lg-12 col-md-12 col-12">
+                                <ul>
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-12 col-12">
+                                            <li><a href="index.php">Home</a></li>
+                                        </div>
+                                        
+                                        <div class="col-lg-3 col-md-12  col-12">
+                                            <li><a href="unos.php">Unos</a></li>
+                                        </div>
+                                        <div class="col-lg-3 col-md-12  col-12">
+                                            <li><a href="login.php">Administracija</a></li>
+                                        </div>
+                                        <div class="col-lg-3 col-md-12  col-12">
+                                            <li><a href="sport.php">Sport</a></li>
+                                        </div>
+                                        <div class="col-lg-3 col-md-12  col-12">
+                                            <li><a href="hrana.php">Hrana</a></li>
+                                        </div>
+                                    </div>
+                                </ul>
+                            </nav>
+                        </div>
+                    </header>
+            </div>
+        </div>
+
+        <main>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-12 col-lg-12">
+
+                        <form action="skripta.php"  method="POST" name="prijava" >
+                            <div class="form-item">
+                                <label for="title">Naslov vijesti: </label>
+                                <div class="form-field">
+                                    <span id="porukaTitle" class="bojaPoruke"></span>
+                                    <input type="text" name="title" class="form-field-textual" id="title" >
+                                </div>
+                            </div>
+
+                            <div class="form-item">
+                                <label for="title">Datum: </label>
+                                <div class="form-field">
+                                    <input type="text" name="date" class="form-field-textual" id="date" >
+                                </div>
+                            </div>
+
+                            <div class="form-item">
+                                <label for="about">Kratki sadržaj vijesti (do 50
+                                znakova)</label>
+                                <div class="form-field">
+                                    <span id="porukaAbout" class="bojaPoruke"></span>
+                                    <textarea name="about"  cols="30" rows="10" class="form-field-textual" id="about" ></textarea>
+                                </div>
+                            </div>
+
+                            <div class="form-item">
+                                <label for="content">Sadržaj vijesti</label>
+                                <div class="form-field">
+                                    <span id="porukaContent" class="bojaPoruke"></span>
+                                    <textarea name="content" id="content" cols="30" rows="10" class="form-field-textual" ></textarea>
+                                </div>
+                            </div>
+
+                            <div class="form-item">
+                                <label for="photo">Slika: </label>
+                                <div class="form-field">
+                                    <span id="porukaSlika" class="bojaPoruke"></span>
+                                    <input type="file" accept="image/jpg,image/gif" class="input-text" name="pphoto" id="pphoto"/>
+                                </div>
+                            </div>
+
+                            <div class="form-item">
+                                <label for="category">Kategorija vijesti</label>
+                                
+                                <div class="form-field">
+                                    <span id="porukaKategorija" class="bojaPoruke"></span>
+                                    <select name="category" id="category" class="form-field-textual" name="category"  >
+
+                                        <option value="sport">Sport</option>
+                                        <option value="hrana">Hrana</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-item">
+                                <label>Spremiti u arhivu:
+                                    <div class="form-field">
+                                        <input type="checkbox" name="archive" id="archive" >
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="form-item">
+
+                                <button type="reset"  name ="ponisti">Poništi</button>
+                                <button type="submit"  name="submit" id="gumb">Prihvati</button>
+
+                            </div>
+                            </form>
+                    </div>
+                </div>
+            </div>
+
+
+
+            
+            
+        </main>
+
+        <div class="container">
+            <div class="row">
+                <footer class="col-lg-12" id="podnozje">
+
+                    <h1>WELT</h1>
+                   
+                </footer>
+               
+            </div>
+        </div>
+
+        
+        <script type="text/javascript">
+                
+            document.getElementById("gumb").onclick = function(event)
+            {
+                var slanjeForme = true;
+                var poljeTitle = document.getElementById("title");
+                var title = document.getElementById("title").value;
+                if (title.length < 5 || title.length > 30)
+                {
+                    slanjeForme = false;
+                    poljeTitle.style.border="5px dashed red";
+                    document.getElementById("porukaTitle").innerHTML="<b>Naslov vjesti mora imati između 5 i 30 znakova!</b><br>";
+
+                }else
+                {
+                    poljeTitle.style.border="1px solid green";
+                    document.getElementById("porukaTitle").innerHTML="";
+                }
+            
+                var poljeAbout = document.getElementById("about");
+                var about = document.getElementById("about").value;
+                if (about.length < 10 || about.length > 100)
+                {
+                    slanjeForme = false;
+                    poljeAbout.style.border="5px dashed red";
+                    document.getElementById("porukaAbout").innerHTML="<b>Kratki sadržaj mora imati između 10 i 100 znakova!</b><br>";
+                } else
+                {
+                    poljeAbout.style.border="1px solid green";
+                    document.getElementById("porukaAbout").innerHTML="";
+                }
+            
+                var poljeContent = document.getElementById("content");
+                var content = document.getElementById("content").value;
+                if (content.length == 0) 
+                {
+                    slanjeForme = false;
+                    poljeContent.style.border="5px dashed red";
+                    poljeContent.style.color="red";
+                    document.getElementById("porukaContent").innerHTML="<b>Sadržaj mora biti unesen!</b><br>";
+                } else 
+                {
+                    poljeContent.style.border="1px solid green";
+            
+                    document.getElementById("porukaContent").innerHTML="";
+                }
+           
+                var poljeSlika = document.getElementById("pphoto");
+                var pphoto = document.getElementById("pphoto").value;
+                if (pphoto.length == 0) 
+                {
+                    slanjeForme = false;
+                    poljeSlika.style.border="5px dashed red";
+                    document.getElementById("porukaSlika").innerHTML="<b>Slika mora biti unesena!</b><br>";
+                } else 
+                {
+                    poljeSlika.style.border="1px solid green";
+                    document.getElementById("porukaSlika").innerHTML="";
+                }
+        
+                    
+                
+                if (slanjeForme != true) 
+                {
+                    event.preventDefault();
+                }
+            };
+        </script>
+
+    </body>
+</html>
